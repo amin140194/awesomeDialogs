@@ -14,7 +14,7 @@ class FlareHeader extends StatelessWidget {
       case DialogType.INFO:
         return FlareActor(
           loop
-              ? "packages/awesome_dialog/assets/flare/info.flr"
+              ? "packages/awesome_dialog/assets/flare/info2.flr"
               : "packages/awesome_dialog/assets/flare/info_without_loop.flr",
           alignment: Alignment.center,
           fit: BoxFit.cover,
