@@ -80,6 +80,8 @@ class AwesomeDialog {
   ///Control if add or not the Padding EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom).
   final bool keyboardAware;
 
+  final bool popContext;
+
   AwesomeDialog({
     @required this.context,
     this.dialogType,
@@ -107,6 +109,7 @@ class AwesomeDialog {
     this.useRootNavigator = false,
     this.autoHide,
     this.keyboardAware = true,
+    this.popContext = true
   }) : assert(
           (dialogType != null || customHeader != null),
           context != null,
@@ -175,7 +178,8 @@ class AwesomeDialog {
   Widget get _buildFancyButtonOk => AnimatedButton(
         isFixedHeight: false,
         pressEvent: () {
-          Navigator.of(context, rootNavigator: useRootNavigator).pop();
+          if(popContext)
+            Navigator.of(context, rootNavigator: useRootNavigator).pop();
           btnOkOnPress();
         },
         text: btnOkText ?? 'Ok',
