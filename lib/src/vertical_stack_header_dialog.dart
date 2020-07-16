@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class VerticalStackDialog extends StatelessWidget {
   final String title;
+  final Color titleColor;
   final String desc;
   final Widget btnOk;
   final Widget btnCancel;
@@ -15,6 +16,7 @@ class VerticalStackDialog extends StatelessWidget {
     Key key,
     @required this.title,
     @required this.desc,
+    this.titleColor,
     this.btnOk,
     this.btnCancel,
     this.body,
@@ -63,7 +65,7 @@ class VerticalStackDialog extends StatelessWidget {
                                 Text(
                                   title,
                                   textAlign: TextAlign.center,
-                                  style: Theme.of(context).textTheme.headline6,
+                                  style: TextStyle(color: titleColor ?? Color(0xFF084457)),
                                 ),
                                 SizedBox(
                                   height: 10.0,
